@@ -1,0 +1,73 @@
+//Comment for compiler
+@import '../../_ntnx/variables';
+@import '../../_ntnx/mixins';
+
+html{
+  @include font;
+  background-color: $background-color-3;
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  @include flex(center, center, column);
+}
+
+
+html, body{
+  height: 100%;
+}
+
+
+.header{
+  @include size(60px, 100%);
+  background-color: $background-color-1;
+}
+
+.container{
+  @include size(100%, 100%);
+  @include flex( center, center, row);
+}
+
+li{
+  list-style: none;
+  line-height: 30px;
+}
+
+.card{
+  @include size(400px, 300px);
+  border-radius: 4px;
+  margin: 0 14px;
+  @include transition(box-shadow);
+
+  &:hover{
+    @include shadow();
+
+  }
+
+  .card-header{
+    @include size(80px, 100%);
+    @include flex(flex-start, center, column);
+    border-radius: 4px 4px 0 0;
+    background-color: $border-color-2;
+    // dnnborder-bottom: 1px solid $border-color-3;
+    padding: 20px;
+    h2{
+      font:$h2;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    p{margin: 0;
+    color:$font-color-2;}
+  }
+
+  .card-body{
+    padding: 20px;
+    @include size(100%, 100%);
+    height: calc(100% - 80px);
+    border-radius: 0 0 4px 4px;
+    background-color: white;
+  }
+
+}
