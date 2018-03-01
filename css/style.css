@@ -20,6 +20,26 @@ html, body {
   height: 100%;
 }
 
+p {
+  font: 400 14px/22px "nutanix_soft", san-serif;
+}
+
+h1 {
+  font: 200 29px/20px "nutanix_soft", san-serif;
+}
+
+h2 {
+  font: 400 18px/12px "nutanix_soft", san-serif;
+}
+
+h3 {
+  font: 500 14px/10px "nutanix_soft", san-serif;
+}
+
+h4 {
+  font: 400 12px/8px "nutanix_soft", san-serif;
+}
+
 .header {
   height: 60px;
   width: 100%;
@@ -29,26 +49,47 @@ html, body {
 
 .container {
   height: 100%;
-  width: 100%;
+  width: 960px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-li {
-  list-style: none;
-  line-height: 30px;
+.deck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.details {
+  height: auto;
+  width: 960px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.visible {
+  height: auto;
+  width: 960px;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .card {
-  height: 400px;
-  width: 300px;
+  height: 250px;
+  width: 400px;
   box-sizing: border-box;
-  border-radius: 4px;
-  margin: 0 14px;
   transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 4px;
+  margin: 0 10px;
 }
 
 .card:hover {
@@ -56,7 +97,7 @@ li {
 }
 
 .card .card-header {
-  height: 80px;
+  height: auto;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -65,26 +106,127 @@ li {
   flex-direction: column;
   border-radius: 4px 4px 0 0;
   background-color: #D5DAE0;
-  padding: 20px;
+  background-color: #FFFFFF;
+  padding: 30px 30px 0 30px;
 }
 
-.card .card-header h2 {
-  font: 400 18px/12px "nutanix_soft", san-serif;
+.card .card-header h1 {
   margin: 0;
   margin-bottom: 10px;
 }
 
 .card .card-header p {
-  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font: 400 14px/10px "nutanix_soft", san-serif;
   color: #627386;
 }
 
 .card .card-body {
-  padding: 20px;
+  padding: 10px 30px;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
   height: calc(100% - 80px);
-  border-radius: 0 0 4px 4px;
   background-color: white;
+}
+
+.card .card-footer {
+  padding: 20px 30px;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0 0 4px 4px;
+  background-color: #FFFFFF;
+  border-top: 1px solid #F2F4F6;
+}
+
+.card .card-footer p {
+  margin-top: 6px;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  color: #627386;
+}
+
+.card .card-footer h2 {
+  margin-top: 0;
+}
+
+.primary {
+  margin: 0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #FFFFFF;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  font-weight: 500;
+  border: none;
+  text-decoration: none;
+  background-color: #22A5F7;
+  outline: none;
+  width: 100%;
+}
+
+.primary:hover {
+  color: #FFFFFF;
+  cursor: pointer;
+  background-color: #1f88de;
+}
+
+.primary:active {
+  color: #FFFFFF;
+  background-color: #1b6dc6;
+}
+
+.primary span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
+.table-wrapper {
+  margin: 10px;
+  margin-top: 180px;
+  position: relative;
+  height: auto;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+th, td {
+  height: 40px;
+  border-bottom: 1px solid #F2F4F6;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+tr {
+  margin: 0;
+  padding: 0;
+}
+
+tr:last-child td {
+  border-bottom: 1px solid transparent;
+}
+
+th {
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  color: #627386;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+th:not(:last-child) {
+  border-right: 1px solid #F2F4F6;
 }
