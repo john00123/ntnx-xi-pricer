@@ -51,7 +51,7 @@ li{
     @include flex(flex-start, center, column);
     border-radius: 4px 4px 0 0;
     background-color: $border-color-2;
-    // dnnborder-bottom: 1px solid $border-color-3;
+    // border-bottom: 1px solid $border-color-3;
     padding: 20px;
     h2{
       font:$h2;
