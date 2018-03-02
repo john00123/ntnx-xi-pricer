@@ -160,8 +160,20 @@ th{
   &:not(:last-child){
     border-right: 1px solid $border-color-3;
   }
+
+
+}
+
+.action{
+  color:$blue-1;
+}
+
+.right{
+  text-align: right;
 }
 
 td{
-
+  &:first-child{
+    width: 700px;
+  }
 }

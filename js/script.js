@@ -59,22 +59,29 @@ $(document).ready(function(){
         <div class='table-wrapper'>
           <table>
             <tr>
-              <th>Account</th>
-              <th>Account</th>
-              <th>Account</th>
-              <th>Account</th>
+              <th>Product</th>
+              <th>Item</th>
+              <th>Action</th>
             </tr>
             <tr>
+              <td><input type='checkbox'/>  Protected VMs</td>
               <td>3</td>
-              <td>3</td>
-              <td>3</td>
-              <td>3</td>
+              <td class='right action'>Edit</td>
             </tr>
             <tr>
+              <td><input type='checkbox'/>  24/7 VMs</td>
               <td>2</td>
-              <td>2</td>
-              <td>2</td>
-              <td>1</td>
+              <td class='right action'>Edit </td>
+            </tr>
+            <tr>
+              <td><input type='checkbox'/>  Connections</td>
+              <td> VPN </td>
+              <td class='right action'> Edit </td>
+            </tr>
+            <tr>
+              <td><input type='checkbox'/>  Failover</td>
+              <td> 8hrs every quarter </td>
+              <td class=' right action'> Edit </td>
             </tr>
           </table>
         </div>

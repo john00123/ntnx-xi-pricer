@@ -230,3 +230,15 @@ th {
 th:not(:last-child) {
   border-right: 1px solid #F2F4F6;
 }
+
+.action {
+  color: #22A5F7;
+}
+
+.right {
+  text-align: right;
+}
+
+td:first-child {
+  width: 700px;
+}
