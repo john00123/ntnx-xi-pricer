@@ -38,12 +38,13 @@ h4{font:$h4;}
 
 .deck{
   @include flex(center, center, row);
-  @include size(auto, 100%);
+  @include size(600px, 100%);
 }
 
 .details{
   @include size(auto, 960px);
   opacity: 0;
+  padding: 10px;
   @include transition(opacity);
 }
 
@@ -109,6 +110,9 @@ h4{font:$h4;}
 
 }
 
+.card-footer{
+  .primary{ margin-top: 10px;}
+}
 
 //button
 
@@ -120,8 +124,6 @@ h4{font:$h4;}
 }
 
 .table-wrapper{
-  margin: 10px;
-  margin-top: 180px;
   position:relative;
   @include size(auto, calc(100% - 20px));
   background-color: $white;

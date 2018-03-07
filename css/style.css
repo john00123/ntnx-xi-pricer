@@ -64,7 +64,7 @@ h4 {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  height: auto;
+  height: 600px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -74,6 +74,7 @@ h4 {
   width: 960px;
   box-sizing: border-box;
   opacity: 0;
+  padding: 10px;
   transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -153,6 +154,10 @@ h4 {
   margin-top: 0;
 }
 
+.card-footer .primary {
+  margin-top: 10px;
+}
+
 .primary {
   margin: 0;
   border-radius: 4px;
@@ -186,8 +191,6 @@ h4 {
 }
 
 .table-wrapper {
-  margin: 10px;
-  margin-top: 180px;
   position: relative;
   height: auto;
   width: calc(100% - 20px);

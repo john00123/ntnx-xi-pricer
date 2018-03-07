@@ -1,7 +1,7 @@
 const tiers = [
   {
     tier: 'Starter',
-    subtitle: 'Fro those trying Xi cloud',
+    subtitle: 'For those trying Xi cloud',
     price: 'Free',
     protection: 10,
     vpn: 'VPN',
@@ -56,6 +56,7 @@ $(document).ready(function(){
 
   $('.primary').one('click',function(){
     $('.details').hide().append(`
+        <h2> Plan Details </h2>
         <div class='table-wrapper'>
           <table>
             <tr>
