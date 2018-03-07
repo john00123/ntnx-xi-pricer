@@ -65,22 +65,22 @@ $(document).ready(function(){
               <th>Action</th>
             </tr>
             <tr>
-              <td><input type='checkbox'/>  Protected VMs</td>
+              <td><input type='checkbox' checked/>  Protected VMs</td>
               <td>3</td>
               <td class='right action'>Edit</td>
             </tr>
             <tr>
-              <td><input type='checkbox'/>  24/7 VMs</td>
+              <td><input type='checkbox' checked/>  24/7 VMs</td>
               <td>2</td>
-              <td class='right action'>Edit </td>
+              <td class='right action' >Edit </td>
             </tr>
             <tr>
-              <td><input type='checkbox'/>  Connections</td>
+              <td><input type='checkbox' checked/>  Connections</td>
               <td> VPN </td>
               <td class='right action'> Edit </td>
             </tr>
             <tr>
-              <td><input type='checkbox'/>  Failover</td>
+              <td><input type='checkbox' checked/>  Failover</td>
               <td> 8hrs every quarter </td>
               <td class=' right action'> Edit </td>
             </tr>
