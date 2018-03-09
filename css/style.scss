@@ -27,6 +27,7 @@ h4{font:$h4;}
   background-color: $background-color-1;
   position: fixed;
   top:0;
+  z-index: 3;
 }
 
 .container{
@@ -40,13 +41,13 @@ h4{font:$h4;}
   @include flex(center, center, row);
   @include size(auto, 100%);
   flex-shrink: 0;
-  margin-top: 20px;
 }
 
 .details{
   @include size(auto, 960px);
   opacity: 0;
-  padding: 10px;
+  padding: 40px 10px;
+
   @include transition(opacity);
 }
 
@@ -114,7 +115,9 @@ h4{font:$h4;}
 
 //button
 
-
+.price{
+  @include secondary-alt;
+}
 
 .primary{
   @include primary;
@@ -126,6 +129,7 @@ h4{font:$h4;}
   @include size(auto, 100%);
   background-color: $white;
   border-radius: 4px;
+  margin-top: 20px;
 }
 table{
   width: 100%;
@@ -165,6 +169,7 @@ th{
 
 .right{
   text-align: right;
+  width: 70px;
 }
 td{
   &:first-child{
@@ -174,12 +179,4 @@ td{
   input{
     margin-right: 10px;
   }
-}
-
-
-#wrapper {
-  width: 600px;
-  height: 300px;
-  position: relative;
-  overflow: hidden;
 }
