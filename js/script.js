@@ -39,7 +39,7 @@ const popupData ={
 
   body: [
     //0 credits
-    `<img src='../img/elite2.svg' style='padding:10px 0 20px 0'>
+    `<img src='https://john00123.github.io/ntnx-xi-pricer/img/elite2.svg' style='padding:10px 0 20px 0'>
       <p style='color:#22272E'>Thanks you for choosing Nutanix. Based on your purschase amount, your account it’s now eligible for an elite customer upgrade.</p>
 
       <p style='color:#22272E'>As an Elite customer you have volume discounts, dedicated sales representative support and a higher purchase limit.</p>
