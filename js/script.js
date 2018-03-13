@@ -31,7 +31,7 @@ const tiers = [
 
 const popupData ={
   title :[
-    'Add Funds',
+    'Account Upgrade',
     'Tax Documents',
     'Payment Method',
     'Change Plan',
@@ -39,10 +39,10 @@ const popupData ={
 
   body: [
     //0 credits
-    `<code class="count money">853</code>
-    <h3 style='margin-bottom:0px'>Reedem code</h3>
-    <p style='margin-bottom:10px; width:100%'>Get started by adding some funds to your account</p>
-    <input type="text" value='' id='redeem-input' autocomplete='off'>
+    `<img src='../img/elite2.svg' style='padding:10px 0 20px 0'>
+      <p style='color:#22272E'>Thanks you for choosing Nutanix. Based on your purschase amount, your account it’s now eligible for an elite customer upgrade.</p>
+
+      <p style='color:#22272E'>As an Elite customer you have volume discounts, dedicated sales representative support and a higher purchase limit.</p>
     `,
 
     //1 tax data
@@ -183,7 +183,8 @@ const popupData ={
   ],
 
   footer:[
-    `<button class="primary redeem">Redeem</button>`,
+    `<button class="secondary cancel">Cancel</button>
+     <button class="primary save" style='width:auto'>Contact Sales</button>`,
 
     `<button class="primary save">Save</button>`,
 
@@ -332,7 +333,20 @@ $(document).ready(function(){
           </div>
         </div>`
       );
-      confetti();
+      $('.save').click(()=>{
+        $('.overlay').addClass('js-container');
+        $('.popup').html(
+          `
+            <div class="popup">
+              <div class="popup-header">${popupData.title[0]}</div>
+              <div class="popup-body">${popupData.body[0]}</div>
+              <div class="popup-footer">${popupData.footer[0]}</div>
+            </div>
+          `
+        );
+        $('.cancel, .popup-header').click(()=> $('.overlay').remove());
+        confetti();
+      });
       $('.cancel, .popup-header').click(()=> $('.overlay').remove());
     });
     setTimeout(() =>
@@ -352,7 +366,7 @@ var Confettiful = function Confettiful(el) {
   this.containerEl = null;
 
   this.confettiFrequency = 3;
-  this.confettiColors = ['#fce18a', '#ff726d', '#b48def', '#f4306d'];
+  this.confettiColors = ['#fce18a', '#FFBC0B', '#E69B0A', '#FFF6DD'];
   this.confettiAnimations = ['slow', 'medium', 'fast'];
 
   this._setupElements();
