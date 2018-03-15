@@ -160,7 +160,7 @@ const popupData ={
       <div class='separator'></div>
 
       <h1>
-      <input type='radio'  class='radio' > Minimum Commitment
+      <input type='radio'  class='radio'> Minimum Commitment
       </h1>
       <p style="margin-bottom:20px;">Select an amount for your minimum commitment plan. For order-specific discounts. <a class='price-details'> See pricing details.</a></p>
 
