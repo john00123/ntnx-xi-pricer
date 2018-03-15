@@ -99,6 +99,7 @@ h4 {
 
 .card:hover {
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+  background-color: white;
 }
 
 .card .card-header {
