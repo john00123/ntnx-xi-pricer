@@ -7,7 +7,7 @@ const popupData ={
   ],
 
   body: [
-    //0 elite
+    //0 elite customer
     `<img src='https://john00123.github.io/ntnx-xi-pricer/img/elite2.svg' style='padding:10px 0 20px 0'>
       <p style='color:#22272E'>Thanks you for choosing Nutanix. Based on your purschase amount, your account it’s now eligible for an elite customer upgrade.</p>
 
@@ -162,4 +162,19 @@ const popupData ={
     `<button class="secondary cancel">Cancel</button>
     <button class="primary save" style='width:auto'>Save Changes</button>`,
   ]
+}
+
+function removePopup(){
+  $('.overlay').remove()
+}
+
+function CreatePopup(i){
+ return`<div class="overlay">
+    <div class="popup">
+      <div class="popup-header" onclick='removePopup()'>${popupData.title[i]}</div>
+      <div class="popup-body">${popupData.body[i]}</div>
+      <div class="popup-footer">${popupData.footer[i]}</div>
+    </div>
+  </div>
+  `
 }

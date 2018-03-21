@@ -30,23 +30,23 @@ const tiers = [
 
 
 const items = [
-  {name: 'Disaster Recovery',
+  { name: 'Disaster Recovery',
     elements:[
       { title:'Protected VMs',
         quantity: 3,
         price:300},
-      { title:'CPU per VM(Ghz)',
+      { title:'CPU per VM <span>(Ghz)</span>',
         quantity: 60,
         price:305},
-      { title:'Memory per VM(TiB)',
+      { title:'Memory per VM <span>(TiB)</span>',
         quantity: 3,
         price:300},
       { title:'Recovery Level',
         quantity: 'Gold',
         price:300}
-    ]
+    ],
+   class:'rec'
   },
-
   {name: 'Networking',
     elements:[
       { title:'Public IP count',
@@ -55,26 +55,27 @@ const items = [
       { title:'Connection type',
         quantity: 'VPN',
         price:305}
-    ]
+    ],
+   class:'net'
   },
-
   {name: 'Virtual Machines as a Service',
     elements:[
       { title:'Running VMs',
         quantity: 3,
         price:300},
-      { title:'CPU per VM(Ghz)',
+      { title:'CPU per VM <span>(Ghz)</span>',
         quantity: 30,
         price:305},
-      { title:'Memory per VM(TiB)',
+      { title:'Memory per VM <span>(TiB)</span>',
         quantity: 30,
         price:305,},
-      { title:'HDD per VM(TiB)',
+      { title:'HDD per VM <span>(TiB)</span>',
         quantity: 30,
         price:305,},
-      { title:'SSD per VM(TiB)',
+      { title:'SSD per VM <span>(TiB)</span>',
         quantity: 30,
         price:305}
-    ]
+    ],
+   class:'vmaas'
   }
 ];

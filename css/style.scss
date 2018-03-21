@@ -1,6 +1,8 @@
 //Comment for compiler
 @import '../../_ntnx/variables';
 @import '../../_ntnx/mixins';
+@import '../css/table';
+@import '../css/popup';
 
 html{
   @include font;
@@ -62,6 +64,126 @@ h4{font:$h4;}
   @include transition(box-shadow);
   border-radius: 4px;
   margin: 0 10px;
-  &:hover{ @include shadow();
-  background-color: white;
+  &:hover{ @include shadow(); }
+
+  .card-header{
+    @include size(auto, 100%);
+    @include flex(flex-start, center, column);
+    border-radius: 4px 4px 0 0;
+    background-color: $border-color-2;
+    background-color: $white;
+    // border-bottom: 1px solid $border-color-3;
+    padding: 30px 30px 0 30px;
+
+    h1{
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    p{
+      margin-top: 10px;
+      margin-bottom: 0;
+      font:$p-alt;
+      color:$font-color-2;
+    }
   }
+
+  .card-body{
+    padding: 10px 30px;
+    min-height: 160px;
+    background-color: white;
+  }
+
+  .card-footer{
+    padding: 30px 30px;
+    @include size(auto, 100%);
+    border-radius: 0 0 4px 4px;
+    background-color: $white;
+    border-top: 1px solid $border-color-3;
+
+    p{
+      margin-top: 6px;
+      font:$p-alt;
+      color:$font-color-2;
+    }
+
+    h2{
+      margin-top: 0;
+    }
+  }
+
+}
+
+.card-footer{.primary{ margin-top: 10px;}}
+
+.price{
+  padding-top: 10px;
+  @include secondary-alt;
+  @include flex(center, space-between, row);
+  a{@include link;}
+  &:hover{
+    color:initial;
+  }
+}
+
+.primary{
+  @include primary;
+  width: 100%;
+}
+
+
+
+
+/* ==========================================================================
+Confetti
+========================================================================== */
+
+
+@keyframes confetti-slow {
+  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
+
+  100% { transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg); }
+}
+
+@keyframes confetti-medium {
+  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
+
+  100% { transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg); }
+}
+
+@keyframes confetti-fast {
+  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
+
+  100% { transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg); }
+}
+
+
+.confetti-container {
+  perspective: 700px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  border-radius: 0%;
+  pointer-events: none;
+
+  &--animation-slow {
+    animation: confetti-slow 3.25s linear 1 forwards;
+  }
+
+  &--animation-medium {
+    animation: confetti-medium 2.75s linear 1 forwards;
+  }
+
+  &--animation-fast {
+    animation: confetti-fast 2.25s linear 1 forwards;
+  }
+}
