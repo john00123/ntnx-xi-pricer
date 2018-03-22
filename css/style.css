@@ -38,8 +38,8 @@ th:not(:last-child) {
   border-right: 1px solid #F2F4F6;
 }
 
-td:first-child {
-  width: 700px;
+td:nth-child(2) {
+  width: 500px;
 }
 
 td input {
@@ -68,6 +68,7 @@ td:focus {
   background-color: #FFFFFF;
   border-radius: 4px;
   margin-bottom: 30px;
+  transition: shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .table-wrapper:hover {
@@ -766,10 +767,29 @@ h4 {
   height: 60px;
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   background-color: #22272E;
   position: fixed;
   top: 0;
   z-index: 10;
+}
+
+.header svg {
+  height: 16px;
+  width: 22px;
+  box-sizing: border-box;
+  fill: #4D5969;
+}
+
+.header div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: #627386;
 }
 
 .sub-header {

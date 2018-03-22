@@ -38,7 +38,7 @@ $(document).ready(function(){
           `
           <div class='table-title'>
             <h3>${item.name}</h3>
-            <a class='${item.class}'>Edit</a>
+            <a class='${item.class}'>edit</a>
           </div>
 
           <div class='table-wrapper'>

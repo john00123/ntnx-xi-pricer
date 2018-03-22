@@ -177,7 +177,8 @@ const popupData ={
 }
 
 function removePopup(){
-  $('.overlay').remove()
+  $('.overlay').remove();
+  $('body').css('overflow','initial');
 }
 
 function elite(){
@@ -189,6 +190,7 @@ function elite(){
 
 
 function CreatePopup(i,j,k){
+  $('body').css('overflow','hidden');
  return`<div class="overlay">
     <div class="popup">
       <div class="popup-header" onclick='removePopup()'>${popupData.title[i]}</div>

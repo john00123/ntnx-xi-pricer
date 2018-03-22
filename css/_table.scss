@@ -42,8 +42,8 @@ th{
 }
 
 td{
-  &:first-child{
-    width: 700px;
+  &:nth-child(2){
+    width: 500px;
   }
 
   input{
@@ -61,12 +61,6 @@ td{
 
 }
 
-[contenteditable="true"]{
-  &:hover{
-  border: 1px double $blue-1;
-  cursor: pointer;
-  }
-}
 
 .table-wrapper{
   position:relative;

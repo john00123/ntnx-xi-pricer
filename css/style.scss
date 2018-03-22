@@ -26,10 +26,19 @@ h4{font:$h4;}
 
 .header{
   @include size(60px, 100%);
+  @include flex(center, center, row);
   background-color: $background-color-1;
   position: fixed;
   top:0;
   z-index: 10;
+  svg{
+    @include size(16px, 22px);
+    fill:$background-color-4;
+  }
+  div{
+    @include flex(center, center, row);
+    color:$font-color-2;
+  }
 }
 
 .sub-header{
@@ -47,6 +56,8 @@ h4{font:$h4;}
     color:$font-color-2;
     font-size: 14px;
   }
+
+
 }
 
 .reveal{
