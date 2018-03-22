@@ -1,0 +1,302 @@
+//Comment for compiler
+@import '../../_ntnx/variables';
+@import '../../_ntnx/mixins';
+@import '../css/table';
+@import '../css/popup';
+
+html{
+  @include font;
+  background-color: $background-color-3;
+}
+
+
+
+body{
+  margin: 0;
+  padding: 0;
+  @include flex(center, flex-start, column);
+}
+
+html, body{ height: 100%;}
+
+p{font:$p;}
+h1{font:$h1;}
+h2{font:$h2;}
+h3{font:$h3;}
+h4{font:$h4;}
+
+
+.header{
+  @include size(60px, 100%);
+  @include flex(center, center, row);
+  background-color: $background-color-1;
+  position: fixed;
+  top:0;
+  z-index: 10;
+  svg{
+    @include size(16px, 22px);
+    fill:$background-color-4;
+  }
+  div{
+    @include flex(center, center, row);
+    color:$font-color-2;
+  }
+}
+
+.sub-header{
+  @include size(auto, 100%);
+  @include flex(center, space-between,row);
+  background-color: $white;
+  position: fixed;
+  padding: 10px 0;
+  z-index:1;
+  top:-60px;
+  @include shadow();
+  @include transition(transform);
+
+  span{
+    color:$font-color-2;
+    font-size: 14px;
+  }
+}
+
+.reveal{
+  transform: translateY(120px);
+}
+
+.content{
+  @include flex(center, space-between,row);
+  @include size(auto, 940px);
+  margin: auto;
+}
+
+.container{
+  @include size(auto, 960px);
+  @include flex( center, center, column);
+  padding: 60px 0;
+  margin-top: 60px;
+  @include transition(transform);
+}
+
+.deck{
+  @include flex(center, center, row);
+  @include size(auto, 100%);
+  flex-shrink: 0;
+}
+
+.details{
+  @include size(auto, 960px);
+  opacity: 0;
+  padding: 40px 10px;
+
+  @include transition(opacity);
+}
+
+.visible{
+  @include size(auto, 960px);
+  opacity: 1;
+  @include transition(opacity);
+}
+
+.card{
+  width: 400px;
+  @include transition(box-shadow);
+  @include transition(opacity);
+  border-radius: 4px;
+  margin: 0 10px;
+  &:hover{ @include shadow(); }
+
+  .card-header{
+    @include size(auto, 100%);
+    @include flex(flex-start, center, column);
+    border-radius: 4px 4px 0 0;
+    background-color: $border-color-2;
+    background-color: $white;
+    // border-bottom: 1px solid $border-color-3;
+    padding: 30px 30px 0 30px;
+
+    h1{
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    p{
+      margin-top: 10px;
+      margin-bottom: 0;
+      font:$p-alt;
+      color:$font-color-2;
+    }
+  }
+
+  .card-body{
+    padding: 10px 30px;
+    min-height: 160px;
+    background-color: white;
+  }
+
+  .card-footer{
+    padding: 30px 30px;
+    @include size(auto, 100%);
+    border-radius: 0 0 4px 4px;
+    background-color: $white;
+    border-top: 1px solid $border-color-3;
+
+    p{
+      margin-top: 6px;
+      font:$p-alt;
+      color:$font-color-2;
+    }
+
+    h2{
+      margin-top: 0;
+    }
+  }
+
+}
+
+.card-footer{.primary{ margin-top: 10px;}}
+
+.price{
+  padding-top: 10px;
+  @include secondary-alt;
+  @include flex(center, space-between, row);
+  a{@include link;}
+  &:hover{
+    color:initial;
+  }
+}
+
+.primary{
+  @include primary;
+  width: 100%;
+}
+
+
+
+
+/* ==========================================================================
+Confetti
+========================================================================== */
+
+
+@keyframes confetti-slow {
+  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
+
+  100% { transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg); }
+}
+
+@keyframes confetti-medium {
+  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
+
+  100% { transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg); }
+}
+
+@keyframes confetti-fast {
+  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
+
+  100% { transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg); }
+}
+
+
+.confetti-container {
+  perspective: 700px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  border-radius: 0%;
+  pointer-events: none;
+
+  &--animation-slow {
+    animation: confetti-slow 3.25s linear 1 forwards;
+  }
+
+  &--animation-medium {
+    animation: confetti-medium 2.75s linear 1 forwards;
+  }
+
+  &--animation-fast {
+    animation: confetti-fast 2.25s linear 1 forwards;
+  }
+}
+
+
+//// checkbox
+body{
+  padding: 60px 0px;
+}
+
+.card{
+  @include transition(box-shadow);
+  background-color: white;
+  padding: 20px;
+  margin-bottom:20px;
+  border: 1px solid transparent;
+}
+
+.card:first-child:hover{
+  background-color: $semi-white-blue;
+}
+
+.card:last-of-type{
+  margin-bottom: 100px;
+}
+
+.section-title{
+  color:$font-color-2;
+}
+
+.inline:hover{
+  background-color: $semi-white-blue;
+  cursor: pointer;
+  position: relative;
+  &::after{
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    @include size(16px, 16px);
+    background-color: $light-blue-2;
+    border-radius:25pc;
+    background-image: url(../img/check.svg);
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+  }
+  // border: 1px solid $blue-1;
+}
+
+.inline:active{
+  &:after{
+    background-color: $blue-1;
+  }
+}
+
+
+.selected{
+  position: relative;
+  &::after{
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    @include size(16px, 16px);
+    background-color: $blue-1;
+    border-radius:25pc;
+    background-image: url(../img/check.svg);
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+  }
+  &:hover{
+    &::after{
+      background-color: $blue-1;
+    }
+  }
+}
