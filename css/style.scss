@@ -29,7 +29,36 @@ h4{font:$h4;}
   background-color: $background-color-1;
   position: fixed;
   top:0;
-  z-index: 3;
+  z-index: 10;
+}
+
+.sub-header{
+  @include size(auto, 100%);
+  @include flex(center, space-between,row);
+  background-color: $white;
+  position: fixed;
+  padding: 10px 0;
+  z-index:1;
+  top:-60px;
+  @include shadow();
+  @include transition(transform);
+
+  span{
+    color:$font-color-2;
+    font-size: 14px;
+  }
+}
+
+.reveal{
+  transform: translateY(120px);
+}
+
+
+
+.content{
+  @include flex(center, space-between,row);
+  @include size(auto, 940px);
+  margin: auto;
 }
 
 .container{
@@ -62,6 +91,7 @@ h4{font:$h4;}
 .card{
   width: 400px;
   @include transition(box-shadow);
+  @include transition(opacity);
   border-radius: 4px;
   margin: 0 10px;
   &:hover{ @include shadow(); }

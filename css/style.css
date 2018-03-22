@@ -70,6 +70,10 @@ td:focus {
   margin-bottom: 30px;
 }
 
+.table-wrapper:hover {
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+}
+
 .right {
   text-align: right;
   width: 70px;
@@ -89,6 +93,7 @@ a {
   font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
   font-weight: 500;
+  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 a:hover {
@@ -764,7 +769,44 @@ h4 {
   background-color: #22272E;
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 10;
+}
+
+.sub-header {
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  position: fixed;
+  padding: 10px 0;
+  z-index: 1;
+  top: -60px;
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sub-header span {
+  color: #627386;
+  font-size: 14px;
+}
+
+.reveal {
+  transform: translateY(120px);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: auto;
+  width: 940px;
+  box-sizing: border-box;
+  margin: auto;
 }
 
 .container {
@@ -810,6 +852,7 @@ h4 {
 .card {
   width: 400px;
   transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   border-radius: 4px;
   margin: 0 10px;
 }

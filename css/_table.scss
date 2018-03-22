@@ -9,7 +9,7 @@ table{
   width: 100%;
   margin: 0;
   padding: 0;
-   border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 th, td{
@@ -65,7 +65,7 @@ td{
   &:hover{
   border: 1px double $blue-1;
   cursor: pointer;
-  } 
+  }
 }
 
 .table-wrapper{
@@ -74,6 +74,10 @@ td{
   background-color: $white;
   border-radius: 4px;
   margin-bottom: 30px;
+  @include transition(shadow);
+  &:hover{
+    @include shadow();
+  }
 }
 
 .right{
@@ -90,4 +94,5 @@ td{
 a{
   @include link();
   font-weight: 500;
+  @include transition(opacity);
 }

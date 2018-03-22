@@ -1,9 +1,10 @@
 const popupData ={
   title :[
     'Account Upgrade',
-    'Tax Documents',
-    'Payment Method',
-    'Change Plan',
+    'Disaster Recovery',
+    'Networking',
+    'VMs as a Service',
+    'Plan Selection'
   ],
 
   body: [
@@ -14,7 +15,7 @@ const popupData ={
       <p style='color:#22272E'>As an Elite customer you have volume discounts, dedicated sales representative support and a higher purchase limit.</p>
     `,
 
-    //1 tax data
+    //1 disaster recovery
     `<h1 class='initial-tax'>
     Nutanix is required to collect sales tax in some US states.</h1>
 
@@ -32,7 +33,7 @@ const popupData ={
     <p style='margin: 22px 0 -8px 0;' class='consult'>To learn if your cloud consumption is subject to sale taxes, consult your tax advisor.</p>
     `,
 
-    // 2 payment method
+    // 2 network
     `
     <h4 style='align-self:left; margin-bottom:10px;'>
     <input type='checkbox' id='invoice-only'
@@ -119,7 +120,16 @@ const popupData ={
 
     `,
 
-    // 3 change plan
+    //3 VM as a service
+    `
+
+
+
+    `,
+
+
+
+    // 4 change plan
     `
     <div class="section1">
       <h1>
@@ -152,15 +162,17 @@ const popupData ={
   ],
 
   footer:[
+    //0
     `<button class="secondary cancel">Cancel</button>
      <button class="primary save" style='width:auto'>Contact Sales</button>`,
 
-    `<button class="primary save">Save</button>`,
-
-    `<button class="primary save">Save</button>`,
-
+    //1
     `<button class="secondary cancel">Cancel</button>
-    <button class="primary save" style='width:auto'>Save Changes</button>`,
+     <button class="primary save" style='width:auto'>Save Changes</button>`,
+
+    //2
+    `<button class="secondary cancel">Cancel</button>
+     <button class="primary save" style='width:auto' onclick='elite()'>Save Changes</button>`,
   ]
 }
 
@@ -168,12 +180,20 @@ function removePopup(){
   $('.overlay').remove()
 }
 
-function CreatePopup(i){
+function elite(){
+  $('.overlay').html(CreatePopup(0))
+  $('.overlay:eq(1)').css('background-color','rgba(0,0,0,0)')
+  $('.overlay:eq(0)').addClass('js-container')
+  confetti()
+}
+
+
+function CreatePopup(i,j,k){
  return`<div class="overlay">
     <div class="popup">
       <div class="popup-header" onclick='removePopup()'>${popupData.title[i]}</div>
-      <div class="popup-body">${popupData.body[i]}</div>
-      <div class="popup-footer">${popupData.footer[i]}</div>
+      <div class="popup-body">${popupData.body[j]}</div>
+      <div class="popup-footer">${popupData.footer[k]}</div>
     </div>
   </div>
   `
