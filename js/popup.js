@@ -133,7 +133,7 @@ const popupData ={
     `
     <div class="section1">
       <h1>
-      <input type='radio' class='radio'checked="checked"> Pay as you go plan. <code style="  margin-left: 10px;">Current Plan</code></h1>
+      <input type='radio' class='radio'checked="checked"> Pay as you go plan.</h1>
       <p>Pay only for what you use, reducing the risk or overprovisioning or missing capacity.</p>
 
       <div class='separator'></div>
@@ -141,7 +141,7 @@ const popupData ={
       <h1>
       <input type='radio'  class='radio'> Minimum Commitment
       </h1>
-      <p style="margin-bottom:20px;">Select an amount for your minimum commitment plan. For order-specific discounts. <a class='price-details'> See pricing details.</a></p>
+      <p style="margin-bottom:20px;">Select an amount for your minimum commitment plan. For order-specific discounts.</p>
 
 
 
@@ -181,7 +181,7 @@ function removePopup(){
 }
 
 function elite(){
-  $('.overlay').html(CreatePopup(0))
+  $('.overlay').html(CreatePopup(0,0,0))
   $('.overlay:eq(1)').css('background-color','rgba(0,0,0,0)')
   $('.overlay:eq(0)').addClass('js-container')
   confetti()

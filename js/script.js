@@ -24,7 +24,7 @@ $(document).ready(function(){
     `<div class='sub-header'>
       <div class='content'>
         <h2> Starter Package</h2>
-        <div><h2 style='line-height:0'> $12000.00 <span>/mo</span></h2><a style='line-height:1.5'>edit payment plan</a></div>
+        <div><h2 class='total-amount' style='line-height:0'> $12000.00 <span>/mo</span></h2><a style='line-height:1.5' id='payment'>edit payment plan</a></div>
       </div>
     </div>`
   );
@@ -54,7 +54,7 @@ $(document).ready(function(){
                     <td>${element.title}</td>
                     <td style='text-align: right;'>${element.quantity}</td>
                     <td sytle='text-align: right;' class='right'>$${element.price}.00</td>
-                    <td sytle='text-align: right;' class='right'>$${isNaN(parseInt(element.price * element.quantity))? element.price : element.price * element.quantity }.00</td>
+                    <td sytle='text-align: right;' class='right totalprice'>$${isNaN(parseInt(element.price * element.quantity))? element.price : element.price * element.quantity }.00</td>
                   </tr>`
                 ).join('')}
               </table>
@@ -65,11 +65,23 @@ $(document).ready(function(){
     $('.rec').click(()=> $('body').append(CreatePopup(1,1,1)))
     $('.net').click(()=> $('body').append(CreatePopup(2,2,1)))
     $('.vmaas').click(()=> $('body').append(CreatePopup(3,3,1)))
+    $('#payment').click(() => $('body').append(CreatePopup(4,4,2)))
+
+    var sum = 0;
+
+    $(".totalprice").each(function() {
+      var val = $.trim($(this).text());
+      if (val) {
+          val = parseFloat( val.replace( /^\$/, "" ) );
+          sum += !isNaN( val ) ? val : 0;
+      }
+    });
+
+    $('.total-amount').text('$'+ sum + '.00').append(`<span>/mo</span>`);
 
     setTimeout(() => {
       $('.sub-header').addClass('reveal');
       $('body').animate({scrollTop: $(document).height()}, 2400
-
     )},500
 
     )
