@@ -56,15 +56,11 @@ h4{font:$h4;}
     color:$font-color-2;
     font-size: 14px;
   }
-
-
 }
 
 .reveal{
   transform: translateY(120px);
 }
-
-
 
 .content{
   @include flex(center, space-between,row);
@@ -77,6 +73,7 @@ h4{font:$h4;}
   @include flex( center, center, column);
   padding: 60px 0;
   margin-top: 60px;
+  @include transition(transform);
 }
 
 .deck{

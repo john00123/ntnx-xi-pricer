@@ -30,7 +30,6 @@ $(document).ready(function(){
   );
 
   $('.primary').one('click', () => {
-    $('.deck').css('margin-top','60px');
     $('.container').css('justify-content','flex-start');
     $('.details').hide().append(
       `
@@ -81,6 +80,7 @@ $(document).ready(function(){
 
     setTimeout(() => {
       $('.sub-header').addClass('reveal');
+
       $('body').animate({scrollTop: $(document).height()}, 2400
     )},500
 
