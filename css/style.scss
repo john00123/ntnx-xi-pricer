@@ -4,224 +4,85 @@
 @import '../css/table';
 @import '../css/popup';
 
-html{
+body, html{
+  @include flex(center, center, column);
   @include font;
   background-color: $background-color-3;
-}
-
-body{
-  margin: 0;
   padding: 0;
-  @include flex(center, center, column);
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
-html, body{ height: 100%;}
+hr{
+  background-color: $border-color-3;
+  border:none;
+  height: 1px;
+  margin: 20px 0;
+}
 
 p{font:$p;}
-h1{font:$h1;}
-h2{font:$h2;}
+h1{font:$h1; line-height:1.2; }
+h2{font:$h2; line-height:1.5; margin:0;}
 h3{font:$h3;}
 h4{font:$h4;}
+input[type='radio']{margin-right: 10px;}
+span{padding-left: 20px;}
 
+.primary{@include primary()}
+.secondary{@include secondary()}
 
-.header{
+header{
   @include size(60px, 100%);
   @include flex(center, center, row);
   background-color: $background-color-1;
-  position: fixed;
-  top:0;
-  z-index: 10;
   svg{
     @include size(16px, 22px);
     fill:$background-color-4;
   }
-  div{
-    @include flex(center, center, row);
-    color:$font-color-2;
-  }
 }
 
-.sub-header{
-  @include size(auto, 100%);
-  @include flex(center, space-between,row);
-  background-color: $white;
-  position: fixed;
-  padding: 10px 0;
-  z-index:1;
-  top:-60px;
-  @include shadow();
-  @include transition(transform);
-
-  span{
-    color:$font-color-2;
-    font-size: 14px;
-  }
-}
-
-.reveal{
-  transform: translateY(120px);
-}
-
-.content{
-  @include flex(center, space-between,row);
-  @include size(auto, 940px);
-  margin: auto;
-}
-
-.container{
-  @include size(auto, 960px);
-  @include flex( center, center, column);
-  padding: 60px 0;
-  margin-top: 60px;
-  @include transition(transform);
-}
-
-.deck{
-  @include flex(center, center, row);
-  @include size(auto, 100%);
-  flex-shrink: 0;
-}
-
-.details{
-  @include size(auto, 960px);
-  opacity: 0;
-  padding: 40px 10px;
-
-  @include transition(opacity);
-}
-
-.visible{
-  @include size(auto, 960px);
-  opacity: 1;
-  @include transition(opacity);
+article{
+  @include size(100%, 100%);
+  @include flex(flex-start, center, row);
+  padding: 30px;
 }
 
 .card{
-  width: 400px;
-  @include transition(box-shadow);
-  @include transition(opacity);
+  background-color: white;
+  @include shadow();
   border-radius: 4px;
-  margin: 0 10px;
-  &:hover{ @include shadow(); }
-
-  .card-header{
-    @include size(auto, 100%);
-    @include flex(flex-start, center, column);
-    border-radius: 4px 4px 0 0;
-    background-color: $border-color-2;
-    background-color: $white;
-    // border-bottom: 1px solid $border-color-3;
-    padding: 30px 30px 0 30px;
-
-    h1{
-      margin: 0;
-      margin-bottom: 10px;
-    }
-    p{
-      margin-top: 10px;
-      margin-bottom: 0;
-      font:$p-alt;
-      color:$font-color-2;
-    }
-  }
-
-  .card-body{
-    padding: 10px 30px;
-    min-height: 160px;
-    background-color: white;
-  }
-
-  .card-footer{
-    padding: 30px 30px;
-    @include size(auto, 100%);
-    border-radius: 0 0 4px 4px;
-    background-color: $white;
-    border-top: 1px solid $border-color-3;
-
-    p{
-      margin-top: 6px;
-      font:$p-alt;
-      color:$font-color-2;
-    }
-
-    h2{
-      margin-top: 0;
-    }
-  }
-
+  padding: 30px;
 }
 
-.card-footer{.primary{ margin-top: 10px;}}
-
-.price{
-  padding-top: 10px;
-  @include secondary-alt;
-  @include flex(center, space-between, row);
-  a{@include link;}
-  &:hover{
-    color:initial;
-  }
+.alt{
+  color: $font-color-2;
+  font-weight: 400;
 }
 
-.primary{
-  @include primary;
-  width: 100%;
+.ln{ line-height: 1.5;}
+.fw{ width: 100%;}
+.spc{@include flex(flex-start, space-between, row)}
+
+.section-title h3{
+  margin: 0;
 }
 
-
-
-
-/* ==========================================================================
-Confetti
-========================================================================== */
-
-
-@keyframes confetti-slow {
-  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
-
-  100% { transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg); }
-}
-
-@keyframes confetti-medium {
-  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
-
-  100% { transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg); }
-}
-
-@keyframes confetti-fast {
-  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
-
-  100% { transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg); }
-}
-
-
-.confetti-container {
-  perspective: 700px;
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-}
-
-.confetti {
-  position: absolute;
-  z-index: 1;
-  top: -10px;
-  border-radius: 0%;
-  pointer-events: none;
-
-  &--animation-slow {
-    animation: confetti-slow 3.25s linear 1 forwards;
+.section-body{
+  margin-top: 10px;
+  border-left: 2px solid $border-color-3;
   }
 
-  &--animation-medium {
-    animation: confetti-medium 2.75s linear 1 forwards;
-  }
+.alignment{
+  margin-left: 28px;
+  margin-top: -10px;
+}
 
-  &--animation-fast {
-    animation: confetti-fast 2.25s linear 1 forwards;
-  }
+#sidebar{
+  @include size(100%, 280px);
+}
+
+#selection{
+  @include size(100%, 400px);
+  margin-right: 20px;
 }
