@@ -301,9 +301,8 @@ body{
   &:after{
     background-color: $blue-1;
   }
-  transform: scale(0.9985);
-
-  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.12);
+  transform: scale(0.996);
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.09);
 }
 
 .selected{
