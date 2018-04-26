@@ -21,6 +21,14 @@ hr{
   margin: 20px 0;
 }
 
+.sct-sep{
+  width: calc(100% + 60px);
+  margin-left: -30px;
+  background-color: $border-color-3;
+}
+
+
+
 p{font:$p;}
 h1{font:$h1; line-height:1.2; }
 h2{font:$h2; line-height:1.5; margin:0;}
@@ -31,6 +39,7 @@ span{padding-left: 20px;}
 
 .primary{@include primary()}
 .secondary{@include secondary()}
+.col{@include flex(flex-start, flex-start, column)}
 
 header{
   @include size(60px, 100%);
@@ -80,6 +89,10 @@ article{
 
 #sidebar{
   @include size(100%, 280px);
+}
+
+#final-price{
+  margin: 0;
 }
 
 #selection{

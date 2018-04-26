@@ -740,6 +740,12 @@ hr {
   margin: 20px 0;
 }
 
+.sct-sep {
+  width: calc(100% + 60px);
+  margin-left: -30px;
+  background-color: #F2F4F6;
+}
+
 p {
   font: 400 14px/22px "nutanix_soft", san-serif;
 }
@@ -830,6 +836,13 @@ span {
   line-height: 9pt;
 }
 
+.col {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
 header {
   height: 60px;
   width: 100%;
@@ -904,6 +917,10 @@ article {
   height: 100%;
   width: 280px;
   box-sizing: border-box;
+}
+
+#final-price {
+  margin: 0;
 }
 
 #selection {
